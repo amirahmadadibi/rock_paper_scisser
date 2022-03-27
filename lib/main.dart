@@ -31,7 +31,10 @@ class Application extends StatelessWidget {
                 ),
                 TextButton(
                   style: TextButton.styleFrom(primary: Colors.white),
-                  onPressed: () {},
+                  onPressed: () {
+                    top = 3;
+                    bottom = 1;
+                  },
                   child: Text(
                     'شروع بازی',
                     style: TextStyle(fontSize: 20),
