@@ -1,7 +1,63 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Application());
+  runApp(GameApplication());
+}
+
+class GameApplication extends StatefulWidget {
+  const GameApplication({Key? key}) : super(key: key);
+
+  @override
+  _GameApplicationState createState() => _GameApplicationState();
+}
+
+class _GameApplicationState extends State<GameApplication> {
+  int top = 2;
+  int bottom = 2;
+  @override
+  Widget build(BuildContext context) {
+    print('log');
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'vazir'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('سنگ   کاغذ    قیچی'),
+          centerTitle: true,
+          backgroundColor: Colors.deepOrange,
+        ),
+        backgroundColor: Colors.deepOrange[600],
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image(
+                  image: AssetImage('images/$top.png'),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(primary: Colors.white),
+                  onPressed: () {
+                    setState(() {
+                      top = 3;
+                      bottom = 1;
+                    });
+                  },
+                  child: Text(
+                    'شروع بازی',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+                Image(
+                  image: AssetImage('images/$bottom.png'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class Application extends StatelessWidget {
