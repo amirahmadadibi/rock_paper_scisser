@@ -29,33 +29,33 @@ class _GameApplicationState extends State<GameApplication> {
         ),
         backgroundColor: Colors.deepOrange[600],
         body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image(
-                  image: AssetImage('images/$top.png'),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Image(
+                image: AssetImage('images/$top.png'),
+                height: 100.0,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(primary: Colors.white),
+                onPressed: () {
+                  setState(() {
+                    top = Random().nextInt(3) + 1; //0-2-> 1 3
+                    bottom = Random().nextInt(3) + 1;
+                  });
+                },
+                child: Text(
+                  'شروع بازی',
+                  style: TextStyle(fontSize: 20),
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(primary: Colors.white),
-                  onPressed: () {
-                    setState(() {
-                      top = Random().nextInt(3) + 1; //0-2-> 1 3
-                      bottom = Random().nextInt(3) + 1;
-                      ;
-                    });
-                  },
-                  child: Text(
-                    'شروع بازی',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
-                Image(
-                  image: AssetImage('images/$bottom.png'),
-                ),
-              ],
-            ),
+              ),
+              Image(
+                image: AssetImage('images/$bottom.png'),
+                height: 100.0,
+              ),
+            ],
           ),
         ),
       ),
