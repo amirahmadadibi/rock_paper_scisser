@@ -9,6 +9,8 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int top = 2;
+    int bottom = 1;
     return MaterialApp(
       theme: ThemeData(fontFamily: 'vazir'),
       home: Scaffold(
@@ -25,7 +27,7 @@ class Application extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Image(
-                  image: AssetImage('images/1.png'),
+                  image: AssetImage('images/$top.png'),
                 ),
                 TextButton(
                   style: TextButton.styleFrom(primary: Colors.white),
@@ -36,7 +38,7 @@ class Application extends StatelessWidget {
                   ),
                 ),
                 Image(
-                  image: AssetImage('images/2.png'),
+                  image: AssetImage('images/$bottom.png'),
                 ),
               ],
             ),
